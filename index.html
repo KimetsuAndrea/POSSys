@@ -1,29 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>POS Login</title>
-  <link rel="stylesheet" href="./css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #333; /* Darker header */
+            color: white;
+            padding: 1rem 0; /* Use rems for better responsiveness */
+            text-align: center;
+        }
+        h1 {
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+        }
+        .product-container {
+            display: grid; /* Use grid for better layout control */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto; /* Let the image maintain aspect ratio */
+            margin-bottom: 10px;
+        }
+        .product-card h3 {
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+        .product-card p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+        .product-card .price {
+            font-weight: bold;
+            color: #333;
+        }
+        .product-card button {
+            background-color: #007bff; /* Blue button */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1 class="logo">Easy Point of Sale System</h1>
-    <p class="tagline">Simplifying Sales, Elevating Efficiency</p>
-    <form action="./php/login.php" method="POST" class="login-form">
-      <input type="text" name="username" placeholder="Username" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <div class="radio-group">
-        <label>
-          <input type="radio" name="role" value="admin" required> Admin
-        </label>
-        <label>
-          <input type="radio" name="role" value="cashier" required> Cashier
-        </label>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-  </div>
+    <header>
+        <h1>Easy Point of Sale System</h1>
+        <p>Welcome to the POS Home Page</p>
+    </header>
+    <div class="product-container" id="product-container">
+        <!-- Products will be dynamically added here -->
+    </div>
+
+  <script>
+    // Function to fetch data from db.txt
+    async function fetchProducts() {
+      try {
+        const response = await fetch('./database/db.txt');
+        const data = await response.text();
+        const products = JSON.parse(data).products; // Parse the JSON structure
+        
+        // Render products dynamically
+        const container = document.getElementById('product-container');
+        products.forEach(product => {
+          const productCard = document.createElement('div');
+          productCard.classList.add('product-card');
+          productCard.innerHTML = `
+            <img src="${product.imageUrl}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price}</p>
+            <p>Quantity: ${product.quantity}</p>
+          `;
+          container.appendChild(productCard);
+        });
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    }
+
+    // Call the fetch function when the page loads
+    document.addEventListener('DOMContentLoaded', fetchProducts);
+  </script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "name": "squirt",
+      "quantity": 69,
+      "price": 666,
+      "imageUrl": "/../img/squirt.jpeg"
+    },
+    {
+      "name": "BBM4Sale",
+      "quantity": 79,
+      "price": 12,
+      "imageUrl": "/../img/bangag.jpg"
+    }
+  ]
+}

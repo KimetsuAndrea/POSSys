@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS Login</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="logo">Easy Point of Sale System</h1>
+    <p class="tagline">Simplifying Sales, Elevating Efficiency</p>
+    <form action="./php/login.php" method="POST" class="login-form">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="role" value="admin" required> Admin
+        </label>
+        <label>
+          <input type="radio" name="role" value="cashier" required> Cashier
+        </label>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

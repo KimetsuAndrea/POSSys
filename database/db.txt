@@ -4,13 +4,17 @@
       "name": "squirt",
       "quantity": 69,
       "price": 666,
-      "imageUrl": "/../img/squirt.jpeg"
+      "imageUrl": "/../img/squirt.jpeg",
+      "salebadge": "Sale",
+      "review": 3
     },
     {
       "name": "BBM4Sale",
       "quantity": 79,
       "price": 12,
-      "imageUrl": "/../img/bangag.jpg"
+      "imageUrl": "/../img/bangag.jpg",
+      "salebadge": "sale",
+      "review": 1
     }
   ]
 }

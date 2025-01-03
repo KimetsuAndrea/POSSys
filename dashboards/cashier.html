@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cashier Dashboard</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <?php include('../php/auth.php'); restrictAccess('cashier'); ?>
+  <div class="dashboard">
+    <h1>Cashier Dashboard</h1>
+    <p>Welcome, Cashier!</p>
+    <a href="../php/logout.php">Logout</a>
+  </div>
+</body>
+</html>

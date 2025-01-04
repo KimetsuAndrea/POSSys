@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/home.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="./home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/../user/signin.html">Login</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#all-products">All Products</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="#popular-items">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#new-arrivals">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Shop in style</h1>
+                <p class="lead fw-normal text-white-50 mb-0">With this shop homepage template</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Area -->
+    <div id="content-area"></div> <!-- This is the content area for injected content -->
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2025</p></div>
+    </footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Fetch and populate data -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const contentArea = document.getElementById("content-area");
+            const links = document.querySelectorAll("a.nav-link");
+
+            // Load the home page content by default
+            fetchHomePageContent();
+
+            // Function to fetch home page content
+            async function fetchHomePageContent() {
+                const page = './home.html'; // Default page to load
+                try {
+                    const response = await fetch(page);
+                    if (!response.ok) throw new Error("Home page not found.");
+                    const html = await response.text();
+
+                    // Update the content area with the fetched content
+                    contentArea.innerHTML = html;
+
+                    // Ensure images load after content is injected
+                    const images = contentArea.querySelectorAll("img");
+                    images.forEach(img => {
+                        const src = img.getAttribute("src");
+                        img.setAttribute("src", src);
+                    });
+
+                    // Ensure scripts inside the new content load properly
+                    const scripts = contentArea.querySelectorAll("script");
+                    scripts.forEach(script => {
+                        const newScript = document.createElement("script");
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    });
+
+                } catch (error) {
+                    contentArea.innerHTML = `
+                        <h1>Error</h1>
+                        <p>Sorry, the page could not be loaded. ${error.message}</p>
+                    `;
+                }
+            }
+
+            links.forEach(link => {
+                link.addEventListener("click", async (e) => {
+                    e.preventDefault();
+
+                    // Remove 'active' class from all links
+                    links.forEach(link => link.classList.remove("active"));
+                    // Add 'active' class to the clicked link
+                    link.classList.add("active");
+
+                    const page = link.getAttribute("href");
+
+                    try {
+                        // Fetch the content of the page
+                        const response = await fetch(page);
+                        if (!response.ok) throw new Error("Page not found.");
+                        const html = await response.text();
+
+                        // Update the content area with the fetched content
+                        contentArea.innerHTML = html;
+
+                        // Ensure images load after content is injected
+                        const images = contentArea.querySelectorAll("img");
+                        images.forEach(img => {
+                            const src = img.getAttribute("src");
+                            img.setAttribute("src", src);
+                        });
+
+                        // Ensure scripts inside the new content load properly
+                        const scripts = contentArea.querySelectorAll("script");
+                        scripts.forEach(script => {
+                            const newScript = document.createElement("script");
+                            if (script.src) {
+                                newScript.src = script.src;
+                            } else {
+                                newScript.textContent = script.textContent;
+                            }
+                            document.body.appendChild(newScript);
+                        });
+
+                    } catch (error) {
+                        contentArea.innerHTML = `
+                            <h1>Error</h1>
+                            <p>Sorry, the page could not be loaded. ${error.message}</p>
+                        `;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

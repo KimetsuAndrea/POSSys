@@ -67,6 +67,22 @@
 		</div>
 	</section>
 
+	<script>
+		// When the page loads, check for stored email
+		document.addEventListener('DOMContentLoaded', function() {
+			const emailInput = document.getElementById('email');
+			// If there's a stored email in localStorage, restore it
+			if (localStorage.getItem('email')) {
+				emailInput.value = localStorage.getItem('email');
+			}
+
+			// Store the email value in localStorage whenever it changes
+			emailInput.addEventListener('input', function() {
+				localStorage.setItem('email', emailInput.value);
+			});
+		});
+	</script>
+
 	<script src="js/login.js"></script>
 </body>
 </html>

@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $users[$role]['password'])) {
             $_SESSION['role'] = $role;
             if ($role === 'admin') {
-                header("Location: /../dashboards/admin.html");
+                header("Location: ../dashboard/admin.html");
             } else {
-                header("Location: /../dashboards/cashier.html");
+                header("Location: ../dashboard/cashier.html");
             }
             exit;
         } else {

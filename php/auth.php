@@ -3,7 +3,7 @@ session_start();
 
 // Redirect user to login page if not authenticated
 if (!isset($_SESSION['role'])) {
-    header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/index.html");
+    header("Location: /index.html");
     exit;
 }
 

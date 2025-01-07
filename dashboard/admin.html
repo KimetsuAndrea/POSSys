@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/privilege.css">
 </head>
 <body>
   <?php include('../php/auth.php'); restrictAccess('admin'); ?>
   <div class="dashboard">
-    <h1>Admin Dashboard</h1>
-    <p>Welcome, Admin!</p>
-    <a href="../php/logout.php">Logout</a>
+    <div class="header">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome, Admin!</p>
+    </div>
+    <div class="content">
+      <p>Manage your system effectively.</p>
+      <a href="../php/lagout.php" class="logout-btn">Logout</a>
+    </div>
   </div>
 </body>
 </html>

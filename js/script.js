@@ -1,6 +1,6 @@
             async function fetchData() {
     try {
-        const response = await fetch('/database/db.txt');
+        const response = await fetch('./php/fetchproducts.php');
         const data = await response.json();
         const products = data.products;
 

@@ -1,22 +1,69 @@
-# My Awesome Project 
-![Background Image](/img/logo.jpg) 
+# User-Management-PHP-MYSQL
 
-<span style="font-family: 'Courier New', Courier, monospace; color: #007bff;">**A Simple POS**</span> *System*
+![𝚅𝚒𝚜𝚒𝚝𝚘𝚛𝚜](https://visitor-badge.laobi.icu/badge?page_id=ajayrandhawa.User-Management-PHP-MYSQL&title=Visitor )
 
-This repository contains a simple Point of Sale (POS) system built with HTML, CSS, JavaScript, and PHP. It's a basic system that demonstrates the core functionality of a POS system, including:
 
-* **Login:** A secure login page to authenticate users.
-* **Product Management:**  A dashboard to manage products, including adding, updating, and deleting items.
-* **Sales Transactions:**  A system to process sales transactions, including adding items, calculating totals, and generating receipts.
+PHP User Management System is a powerful PHP script that offers a secure user management system. The application is a great way to build your website, allowing your users to register an account and build restricted access to certain users. We offer great support and it’s very easy to install. It’s powered by MYSQL and PHP.
 
-**Features:**
+# User Features
 
-* <span style="color: #28a745;">**User-Friendly Interface:**</span> Designed with a clean and intuitive interface for easy navigation.
-* <span style="color: #28a745;">**Database Integration:**</span>  Uses a database (likely MySQL or similar) to store product information and transaction data.
-* <span style="color: #28a745;">**Security Measures:**</span>  Includes basic security features like password protection.
+* Login
+* Signup
+* Change Password
+* Edit Profile
+* Feedback
+* View Messages
+* Notification
 
-**Getting Started:**
+# Admin Features
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/KimetsuAndrea/POSSys
+* Dashboard (Total Users, Deleted Users, Notification, Feedback Messages)
+* Signup
+* Change Password
+* Edit Admin Profile
+* Edit Users Profile
+* Reply Feedback
+* Delete Users
+* Confirmed Users
+* View Feedback
+* Notification
+* View Delelted Users
+* Search Users, Feedback Messages
+* Download User Excel File 
+* Sorting 
+
+## Wireframe
+
+ <img src="/Sc/wireframe.png">
+
+## Screenshots
+
+| Screenshots  | Screenshots |
+| ------------- | ------------- |
+| <img src="/Sc/1.PNG"> | <img src="/Sc/2.PNG"> |
+| <img src="/Sc/3.PNG"> | <img src="/Sc/4.PNG"> |
+| <img src="/Sc/5.PNG"> | <img src="/Sc/6.PNG"> |
+
+### How to Install
+
+* Edit Database (includes/config.php) and (admin/includes/config.php)
+
+* Login to Admin
+* Url: http://www.yourdomain.com/admin/
+* Username : admin
+* Password : 963852741
+
+### Database Files are included in Project. (database.sql)
+
+### Author
+
+Ajay Randhawa
+
+ ## Donate
+If you appreciate that, please consider donating to the Developer.
+
+[![Donate](https://cdn.pbrd.co/images/HyQFKkP.png)](https://www.paypal.me/ajayrandhawa) 
+
+#### Happy Open Source....
+
+

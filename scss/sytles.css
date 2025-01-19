@@ -1,0 +1,43 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap";
+
+body {
+  font-family: "Roboto Slab", serif;
+}
+
+.neo-nav {
+  background: linear-gradient(90deg, #ff6f61, #d16ba5);
+  font-size: 1.2rem;
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-link {
+    color: #ffffff !important;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: #ffdfb4 !important;
+      text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .dropdown-menu {
+    background-color: #d16ba5;
+    border: none;
+    border-radius: 5px;
+
+    .dropdown-item {
+      color: #ffffff !important;
+      padding: 10px 20px;
+
+      &:hover {
+        background-color: #ff6f61;
+        color: #000 !important;
+      }
+    }
+  }
+}

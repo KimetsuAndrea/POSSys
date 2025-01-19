@@ -7,14 +7,19 @@
   <link rel="stylesheet" href="../css/privilege.css">
 </head>
 <body>
+  
   <?php include('../php/auth.php'); restrictAccess('admin'); ?>
   <div class="dashboard">
     <div class="header">
       <h1>Admin Dashboard</h1>
       <p>Welcome, Admin!</p>
+      
     </div>
     <div class="content">
       <p>Manage your system effectively.</p>
+      <a href="../php/create_user.php" class="logout-btn">Create New User</a><br>
+<a href="../php/change_password.php" class="logout-btn">Change User Password</a>
+<a href="../php/add_product.php" class="logout-btn">Add New Product</a>
       <a href="../php/lagout.php" class="logout-btn">Logout</a>
     </div>
   </div>

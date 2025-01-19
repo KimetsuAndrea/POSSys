@@ -12,6 +12,78 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="./css/home.css" rel="stylesheet" />
+    <style>
+  /* Add this CSS to make the navbar neomorphic */
+  .navbar {
+ /* Neomorphic Navbar */
+.navbar {
+  background-color: #e0e0e0; /* Initial Light gray background */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 5px 5px 15px #b8b9be, -5px -5px 15px #ffffff; /* Soft shadow for the 3D effect */
+  animation: neoColor 5s infinite alternate; /* Apply the animation with color change */
+}
+
+/* Neomorphic Color Animation with multiple background colors */
+@keyframes neoColor {
+  0% {
+    background-color: #e0e0e0; /* Light gray */
+    box-shadow: 5px 5px 15px #b8b9be, -5px -5px 15px #ffffff; /* Initial soft shadow */
+  }
+  25% {
+    background-color: #d0d0d0; /* Slightly darker gray */
+    box-shadow: 5px 5px 20px #b8b9be, -5px -5px 20px #ffffff; /* Darker shadow */
+  }
+  50% {
+    background-color: #c0c0c0; /* Mid-tone gray */
+    box-shadow: 5px 5px 25px #b8b9be, -5px -5px 25px #ffffff; /* Stronger shadow */
+  }
+  75% {
+    background-color: #f0f0f0; /* Lighter gray */
+    box-shadow: 5px 5px 20px #b8b9be, -5px -5px 20px #ffffff; /* Softened shadow */
+  }
+  100% {
+    background-color: #b8b9be; /* A slightly bluish gray */
+    box-shadow: 5px 5px 15px #b8b9be, -5px -5px 15px #ffffff; /* Light shadow */
+  }
+}
+
+/* Neomorphic Nav Links */
+.nav-link, .dropdown-item {
+  color: #555 !important; /* Neutral text color */
+  transition: color 0.3s, transform 0.3s; /* Smooth color and transformation transitions */
+}
+
+.nav-link:hover, .dropdown-item:hover {
+  color: #007bff !important; /* Highlight text color on hover */
+  transform: scale(1.05); /* Slightly enlarge the element on hover */
+}
+
+/* Neomorphic Navbar Brand */
+.navbar-brand {
+  color: #333 !important;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect on brand */
+}
+
+/* Neomorphic Dropdown Menu */
+.dropdown-menu {
+  background-color: #e0e0e0; /* Initial Light gray background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 5px 5px 15px #b8b9be, -5px -5px 15px #ffffff; /* Soft shadow for dropdown */
+  animation: neoColor 5s infinite alternate; /* Apply the animation with color change */
+}
+
+/* Dropdown Item Hover Effect */
+.dropdown-item {
+  border-radius: 10px; /* Rounded item corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover transitions */
+}
+
+.dropdown-item:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: #fff !important; /* White text on hover */
+}
+</style>
 </head>
 <body>
     <!-- Navigation-->

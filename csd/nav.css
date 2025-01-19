@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+body {
+  font-family: "Roboto Slab", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: #fff;
+}
+
+.neo-nav {
+  background: linear-gradient(90deg, #ff6f61, #d16ba5, #6f42c1, #007bff);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.navbar-brand:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.nav-link {
+  color: #fff !important;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffd700 !important;
+  transform: translateY(-3px);
+}
+
+.nav-link.active {
+  color: #ffd700 !important;
+}
+
+.dropdown-menu {
+  background: linear-gradient(90deg, #6f42c1, #d16ba5);
+  border: none;
+  animation: gradientShift 8s ease infinite;
+}
+
+.dropdown-item {
+  color: #fff !important;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 223, 0, 0.8);
+  color: #000 !important;
+  transform: translateX(5px);
+}
+
+#content-area {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#content-area h1, #content-area p {
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+}
+
+#content-area a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#content-area a:hover {
+  text-decoration: underline;
+  color: #ff6f61;
+}
+
+button.navbar-toggler {
+  border: none;
+}
+
+button.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
